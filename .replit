@@ -1,0 +1,25 @@
+# crest on Replit
+# "Run" builds the web export and serves it on port 8080 (no dev server needed).
+# For Expo Go on a phone, run `npm run expo-go` in the Shell instead (keep it running).
+modules = ["nodejs-20"]
+run = "npm run replit"
+
+[nix]
+channel = "stable-24_05"
+
+[env]
+EXPO_NO_TELEMETRY = "1"
+CI = "1"
+
+[deployment]
+build = ["npm", "run", "build:web"]
+run = ["npm", "run", "serve:web"]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 8080
+externalPort = 80
+
+[[ports]]
+localPort = 8081
+externalPort = 8081

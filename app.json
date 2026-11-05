@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "crest",
+    "slug": "crest",
+    "scheme": "crest",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#000000",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "app.crest.wardrobe"
+    },
+    "android": {
+      "package": "app.crest.wardrobe",
+      "adaptiveIcon": {
+        "backgroundColor": "#000000",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "softwareKeyboardLayoutMode": "resize"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "output": "single",
+      "bundler": "metro",
+      "name": "crest",
+      "backgroundColor": "#000000",
+      "themeColor": "#000000"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "crest reads the outfit photos you choose to find the pieces you own.",
+          "cameraPermission": false,
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-splash-screen",
+        { "backgroundColor": "#000000", "image": "./assets/splash-icon.png", "imageWidth": 120 }
+      ]
+    ],
+    "experiments": { "typedRoutes": false }
+  }
+}
