@@ -8,7 +8,7 @@ export function Wordmark({ tone = 'dark', size = 17 }: { tone?: 'dark' | 'light'
       accessibilityRole="header"
       style={[type.title, { fontSize: size, lineHeight: size * 1.15, fontWeight: '700', letterSpacing: -size * 0.07, color: tone === 'dark' ? color.ink : color.onBlack }]}
     >
-      crest
+      sriram teja
     </Text>
   );
 }

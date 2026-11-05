@@ -1,4 +1,6 @@
-# crest
+# sriram teja
+
+Created by Sriram Teja Singaraju.
 
 Digital wardrobe and conversational personal stylist. Expo SDK 58, React Native 0.88, TypeScript, Expo Router.
 
@@ -50,7 +52,7 @@ These are deliberately not presented as production features:
 
 - **Garment extraction from real photos is not connected.** `extractFromPhotos` returns `unavailable` and the app says so. It never invents detections. Users can tag a single-piece photo by category, and it's added as-is, labelled "not cut out". To make this real, plug a segmentation/detection service (for example a vision model returning masks per garment) into `src/extraction/extractor.ts` and feed its output through the existing `dedupe()`.
 - **The demo closet is bundled sample data.** It has 85 vector-drawn garments, 32 outfit boards and a deterministic wear history. Its "scan" replays the boards' known contents, and the confidence scores are simulated so the review step has pieces to check. It's labelled "demo scan · bundled sample outfits" throughout.
-- **The original crest assets weren't available.** The 188-item catalog, outfit boards, menswear photos and logo files weren't in this workspace, so this build uses procedurally drawn garments and a typeset wordmark/icon. Swap in real cutouts by giving garments `image: { type: 'photo', uri }` (transparent PNGs), or extend `GarmentArt`.
+- **No original garment assets were available.** A real catalog, outfit boards, menswear photos and logo files weren't in this workspace, so this build uses procedurally drawn garments and a typeset wordmark/icon. Swap in real cutouts by giving garments `image: { type: 'photo', uri }` (transparent PNGs), or extend `GarmentArt`.
 - **The stylist is rule-based and runs on-device**, with no LLM. It handles occasions, anchors, follow-ups, clarification, unworn pieces, similar pieces and packing, all grounded in the closet. `respond()` in `src/stylist/engine.ts` is the seam for a model-backed stylist.
 - **There's no live weather.** The stylist uses weather words from the message, otherwise a seasonal assumption, and says so.
 - **Voice** uses the Web Speech API on web. Expo Go has no speech-recognition module, so on native the mic explains this and points to keyboard dictation, which feeds the same chat. Native voice needs a development build with a speech-recognition module.

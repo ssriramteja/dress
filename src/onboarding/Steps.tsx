@@ -26,14 +26,14 @@ export function Frame({ children, footer }: { children: React.ReactNode; footer?
 
 export function Explain({ onNext }: { onNext: () => void }) {
   const rows = [
-    ['01', 'add outfit photos', 'crest reads the photos you choose, nothing else.'],
+    ['01', 'add outfit photos', 'only the photos you choose are read, nothing else.'],
     ['02', 'every piece, lifted out', 'each garment becomes its own clean cutout. repeats are merged.'],
     ['03', 'style what you own', 'ask your stylist for a look, a trip, or the things you forgot.'],
   ];
   return (
     <Frame footer={<Button tone="onBlack" label="continue" onPress={onNext} />}>
       <View style={{ padding: 20, paddingTop: 48, gap: 28 }}>
-        <Text style={[type.display, { color: color.onBlack }]}>how crest works.</Text>
+        <Text style={[type.display, { color: color.onBlack }]}>how it works.</Text>
         {rows.map(([n, title, body]) => (
           <View key={n} style={{ flexDirection: 'row', gap: 16 }}>
             <Text style={[type.label, { color: color.onBlackFaint, width: 24 }]}>{n}</Text>
@@ -109,18 +109,18 @@ export function Source({ onPhotos, onDemo }: { onPhotos: (uris: string[], limite
       <View style={{ padding: 20, paddingTop: 48, gap: 12 }}>
         <Text style={[type.display, { color: color.onBlack }]}>start with your photos.</Text>
         <Text style={[type.body, { color: color.onBlackMuted }]}>
-          pick outfit photos from your camera roll. you choose which ones; crest never browses your library.
+          pick outfit photos from your camera roll. you choose which ones; your library is never browsed.
         </Text>
         <Text style={[type.small, { color: color.onBlackMuted, marginTop: 8 }]}>
-          the demo closet is a bundled sample wardrobe for trying crest. none of it comes from your photos.
+          the demo closet is a bundled sample wardrobe to try things out. none of it comes from your photos.
         </Text>
         {s.kind === 'denied' ? (
           <Notice
             title="photo access is off."
             body={
               s.canAskAgain
-                ? 'crest needs permission to show the photo picker. you can ask again, or carry on with the demo.'
-                : 'turn on photo access for crest in settings, or carry on with the demo closet.'
+                ? 'photo permission is needed to show the photo picker. you can ask again, or carry on with the demo.'
+                : 'turn on photo access for this app in settings, or carry on with the demo closet.'
             }
           />
         ) : null}
@@ -233,7 +233,7 @@ export function RealScanStep({ uris, limited, onDone }: { uris: string[]; limite
           <Text style={[type.micro, { color: color.onBlack }]}>your photos · {uris.length} selected</Text>
         </View>
         <Text style={[type.display, { color: color.onBlack }]}>reading your photos.</Text>
-        {limited ? <Text style={[type.small, { color: color.onBlackMuted }]}>limited access: crest can only see the photos you shared.</Text> : null}
+        {limited ? <Text style={[type.small, { color: color.onBlackMuted }]}>limited access: only the photos you shared are visible.</Text> : null}
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 4, width: contentW }}>
           {Array.from({ length: 12 }, (_, i) => (
             <View key={i} style={{ width: tile, height: tile, backgroundColor: color.surfaceDark }}>
@@ -359,7 +359,7 @@ export function RealReview({
         <Text style={[type.display, { color: color.onBlack }]}>review.</Text>
         <Text style={[type.body, { color: color.onBlack }]}>{reason}</Text>
         <Text style={[type.small, { color: color.onBlackMuted }]}>
-          crest won’t guess. if a photo shows a single piece, tag it below and it’ll be added as-is (not cut out). otherwise use the demo closet to explore.
+          nothing is guessed. if a photo shows a single piece, tag it below and it’ll be added as-is (not cut out). otherwise use the demo closet to explore.
         </Text>
         {uris.map((u, i) => (
           <View key={u + i} style={{ flexDirection: 'row', gap: 12 }}>

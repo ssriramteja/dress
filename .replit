@@ -1,4 +1,4 @@
-# crest on Replit
+# sriram teja on Replit
 # "Run" builds the web export and serves it on port 8080 (no dev server needed).
 # For Expo Go on a phone, run `npm run expo-go` in the Shell instead (keep it running).
 modules = ["nodejs-20"]

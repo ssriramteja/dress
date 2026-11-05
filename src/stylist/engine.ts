@@ -1,5 +1,5 @@
 /**
- * crest stylist: an on-device, rule-based stylist grounded in the user's closet.
+ * stylist: an on-device, rule-based stylist grounded in the user's closet.
  *
  * It parses intent (look / anchor / unworn / similar / pack / follow-up),
  * asks for clarification when a request is ambiguous, and composes looks only

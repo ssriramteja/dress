@@ -6,7 +6,9 @@ import { localDate, uid } from './util';
 
 export { emptyStylist };
 
-const KEY = 'crest/v1';
+const KEY = 'sriramteja/v1';
+/** earlier builds saved here; read once so existing closets carry over */
+const LEGACY_KEY = 'crest/v1';
 
 export const initialState = (): WardrobeState => ({
   version: 1,
@@ -110,6 +112,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     let alive = true;
     setStatus('loading');
     AsyncStorage.getItem(KEY)
+      .then(async (raw) => raw ?? (await AsyncStorage.getItem(LEGACY_KEY)))
       .then((raw) => {
         if (!alive) return;
         if (raw) {
@@ -168,7 +171,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
   const logout = useCallback(async () => {
     try {
-      await AsyncStorage.removeItem(KEY);
+      await AsyncStorage.multiRemove([KEY, LEGACY_KEY]);
     } catch {
       // still reset in memory
     }

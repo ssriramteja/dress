@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "crest",
-    "slug": "crest",
-    "scheme": "crest",
+    "name": "sriram teja",
+    "slug": "sriram-teja",
+    "scheme": "sriramteja",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -10,10 +10,10 @@
     "backgroundColor": "#000000",
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "app.crest.wardrobe"
+      "bundleIdentifier": "app.sriramteja.wardrobe"
     },
     "android": {
-      "package": "app.crest.wardrobe",
+      "package": "app.sriramteja.wardrobe",
       "adaptiveIcon": {
         "backgroundColor": "#000000",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -25,7 +25,7 @@
       "favicon": "./assets/favicon.png",
       "output": "single",
       "bundler": "metro",
-      "name": "crest",
+      "name": "sriram teja",
       "backgroundColor": "#000000",
       "themeColor": "#000000"
     },
@@ -34,7 +34,7 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "crest reads the outfit photos you choose to find the pieces you own.",
+          "photosPermission": "the app reads the outfit photos you choose to find the pieces you own.",
           "cameraPermission": false,
           "microphonePermission": false
         }
