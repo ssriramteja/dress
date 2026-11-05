@@ -23,6 +23,13 @@ Expo Go must support **SDK 58**.
 
 `.replit` is included. **Run** executes `npm run replit`, which builds the web export and serves it on port 8080. It needs no dev server, so the preview URL works on its own. For Expo Go from Replit, run `npm run expo-go` in the Shell. The QR code only works while that process is running.
 
+### Free hosting
+
+- **GitHub Pages:** `.github/workflows/pages.yml` builds and deploys on every push to `main`, at `https://<user>.github.io/<repo>/`. Turn it on once under repo **Settings → Pages → Source: GitHub Actions**. Free accounts need a public repo; paid plans allow private.
+- **Netlify** (keeps the repo private): `netlify.toml` is included. At netlify.com choose *Add new site → Import from Git* and pick this repo; it deploys on every push.
+
+`app.config.js` reads `EXPO_BASE_URL` so sub-path hosts work, while local dev, Expo Go and Netlify still serve from the root.
+
 ## Layout
 
 ```

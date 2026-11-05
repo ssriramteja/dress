@@ -1,0 +1,12 @@
+[build]
+  command = "npx expo export --platform web --output-dir dist"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  EXPO_NO_TELEMETRY = "1"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
